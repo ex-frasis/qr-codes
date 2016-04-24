@@ -6,8 +6,8 @@ class QRCode
     @qrcode = RQRCode::QRCode.new(artist_name)
   end
 
-  def write_qr_file
+  def write_to_file
     png = @qrcode.as_png(size: 200)
-    IO.write("#{artist_name}.png", png.to_s)
+    IO.write("#{@name}.png", png.to_s)
   end
 end
